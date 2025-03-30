@@ -1,0 +1,1 @@
+int novafuncao(int a, int b);

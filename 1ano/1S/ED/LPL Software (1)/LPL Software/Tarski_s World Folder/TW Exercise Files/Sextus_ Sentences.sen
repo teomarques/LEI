@@ -1,0 +1,5 @@
+6.0macs:Mac OS X10.4.1SntP6~(Home(carl) & ~Home(claire))
+; Write the negation normal form of 1 here.  
+; Similarly for the other sentences that follow.~[Happy(max) & 
+(~Likes(carl, claire) | ~Likes(claire, carl))]~~~[(Home(max) | Home(carl)) & 
+        (Happy(max) | Happy(carl))]s=43900;

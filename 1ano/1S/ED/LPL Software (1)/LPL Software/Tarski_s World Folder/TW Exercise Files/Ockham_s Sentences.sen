@@ -1,0 +1,3 @@
+6.0macs:Mac OS X10.4.1SntP9/x (Tet(x) & Large(x))/x /y (Larger(x, y) & ~Large(x))@x @y ((Dodec(x) & Dodec(y)) $ x = y)~@y (Cube(y) $ Small(y))@x (Large(x) % Tet(x))@x @y (Larger(x, y) $ BackOf(x, y))/x /y (Cube(x) & Tet(y) & LeftOf(x, y) & 
+           Smaller(x, y))/x /y (Small(x) & Large(y) & 
+          @z (Between(z, x, y) % Cube(z)))@x (Small(x) % @y (y # x $ LeftOf(x, y)))s=64150;

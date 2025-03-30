@@ -1,0 +1,13 @@
+213 alunos
+108 NRC
+4 com 10
+8 com 11
+13 com 12
+13 com 13
+21 com 14
+14 com 15
+15 com 16
+5 com 17
+7 com 18
+4 com 19
+1 com 20

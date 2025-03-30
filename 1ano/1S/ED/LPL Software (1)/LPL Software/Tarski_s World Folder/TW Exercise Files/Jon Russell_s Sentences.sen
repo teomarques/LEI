@@ -1,0 +1,3 @@
+6.0macs:Mac OS X10.4.1SntP20@x [Tet(x) | /y LeftOf(x, y)]
+;Put a prenex form of 1 in this space.@x @y[(x # y & Cube(x) & Cube(y)) $ 
+           /z Between(z, y, x)]@x [(Cube(x) & /y Smaller(y, x)) $ Medium(x)]/x [Cube(x) $ @x Small(x)]/x [Cube(x) $ @x Cube(x)]~[@x Cube(x) | @x Tet(x) | @x Dodec(x)]~/x[Cube(x) & @y (Tet(y) $ /z Between(z, x, y))]/x Cube(x) % @x Small(x)~[@x Tet(x) % @y Small(y)]@v [/x Larger(x, v) % /x LeftOf(x, v)]s=74391;

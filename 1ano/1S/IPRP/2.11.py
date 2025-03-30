@@ -1,0 +1,15 @@
+import turtle as t
+t.seth(90-360/12)
+for i in range(1, 13):
+    t.penup()
+    t.forward(180)
+    t.pendown()
+    t.forward(20)
+    t.penup()
+    t.forward(20)
+    t.pendown()
+    t.write(i)
+    t.penup()
+    t.goto(0, 0)
+    t.pendown()
+    t.right(360/12)

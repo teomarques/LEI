@@ -1,0 +1,9 @@
+6.0macs:Mac OS X10.4.1SntP40Large(d)
+; This sentence claims that the block named d is
+; large.Large(c)Large(f)Medium(c)Medium(b)Medium(f)Larger(c, b)
+; This claims that block c is larger than block b.Larger(d, e)Larger(d, f)Larger(a, e)BackOf(b, e)
+; This claims that block b is back of block e.BackOf(b, f)BackOf(f, a)LeftOf(b, a)LeftOf(a, b)LeftOf(a, a)RightOf(a, b)RightOf(b, d)SameSize(d, f)SameSize(b, c)SameShape(b, c)SameShape(a, b)SameShape(d, d)SameRow(a, d)SameRow(d, e)SameRow(a, a)SameCol(a, d)SameCol(d, e)SameCol(a, c)Adjoins(a, b)Adjoins(b, c)Adjoins(d, e)Adjoins(b, b)Between(d, e, f)
+; Notice that this claims that block d is between 
+; blocks e and f, not that e is between d and f!  
+; Sentence 35 says that e is between d and f.  Make
+; sure you understand the difference.Between(e, d, f)Between(c, a, f)Between(c, d, b)Between(c, b, e)Between(c, c, c)Between(c, a, e)s=142935;

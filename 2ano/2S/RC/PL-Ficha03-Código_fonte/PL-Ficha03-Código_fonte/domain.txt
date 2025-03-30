@@ -1,0 +1,5 @@
+www.google.com 142.250.184.206
+www.facebook.com 157.240.22.35
+www.apple.com 17.253.144.10
+www.microsoft.com 20.112.52.29
+

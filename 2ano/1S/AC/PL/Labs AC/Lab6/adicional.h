@@ -1,0 +1,1 @@
+void converteOctal(int a);

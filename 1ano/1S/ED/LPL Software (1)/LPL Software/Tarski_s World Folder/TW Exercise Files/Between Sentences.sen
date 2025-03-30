@@ -1,0 +1,2 @@
+6.0macs:Mac OS X10.4.1SntP5Between(a, b, c) $ Smaller(b, c)Smaller(b, c) $ [RightOf(b, c) & Between(a, b, b)]Between(c, b, a) $  [Between(b, a, c) | c = b]Between(a, b, c) | Between(b, a, c) | 
+Between(c, b, a)~Between(b, a, c) s=37597;

@@ -1,0 +1,1 @@
+6.0macs:Mac OS X10.4.1SntP5/x /y /z /w @u (u = x | u = y | u = z | u = w)/x (Dodec(x) & @y (Dodec(y) $ y = x))@x (Dodec(x) $ Small(x))~/v Tet(v)~/x /y (Large(x) & Large(y) & x # y)s=28908;

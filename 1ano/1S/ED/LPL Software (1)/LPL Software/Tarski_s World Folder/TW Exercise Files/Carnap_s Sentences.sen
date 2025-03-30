@@ -1,0 +1,3 @@
+6.0macs:Mac OS X10.4.1SntP10@x (LeftOf(x, b) $ RightOf(b, x))@x ((Small(x) & BackOf(x, c)) $ Dodec(x))@x ((Cube(x) & x # b) 
+                      $ (Larger(x, b) | Smaller(x, b)))Dodec(d) $ @x (x = d $ Dodec(x))/y (Smaller(a, y) & Smaller(y, b)) $ Smaller(a, b)@x (Larger(x, c) $ x # c)@x (Between(x, a, d) | ~Between(x, a, d))@x (Between(x, a, d) | ~Between(x, d, a))@x (Dodec(x)  $ (x = d | Small(x)))@x (Cube(x) $ LeftOf(x, e)) 
+                      $ ~/y (Cube(y) & ~LeftOf(y, e))s=84762;

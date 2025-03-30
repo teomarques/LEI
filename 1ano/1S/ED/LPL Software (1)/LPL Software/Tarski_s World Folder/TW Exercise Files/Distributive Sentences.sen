@@ -1,0 +1,4 @@
+6.0macs:Mac OS X10.4.1SntP6Cube(a) & (LeftOf(a, b) | BackOf(a, b))(Cube(a) & LeftOf(a, b)) | 
+     (Cube(a) & BackOf(a, b))Small(c) | (a = b & b = c & c = d)(Small(c) | a = b) & 
+     (Small(c) | b = c) & 
+     (Small(c) | c = d)(Small(d) & Smaller(e, d)) | Large(d)(Small(d) | Large(d)) & (Smaller(e, d) | Large(d))s=54409;

@@ -1,0 +1,17 @@
+import turtle as t
+v1 = int(input("Indique um valor como parâmetro de altura da coluna 1 para o histograma: "))
+v2 = int(input("Indique um valor como parâmetro de altura da coluna 2 para o histograma: "))
+v3 = int(input("Indique um valor como parâmetro de altura da coluna 3 para o histograma: "))
+v4 = int(input("Indique um valor como parâmetro de altura da coluna 4 para o histograma: "))
+v5 = int(input("Indique um valor como parâmetro de altura da coluna 5 para o histograma: "))
+tup = (v1, v2, v3, v4, v5)
+print("histograma {}".format(tup))
+for i in range(1, 6):
+    t.setheading(90)
+    t.fd(50*tup[i-1])
+    t.right(90)
+    t.fd(20)
+    t.right(90)
+    t.fd(50*tup[i-1])
+    t.home()
+    t.fd(20*i)

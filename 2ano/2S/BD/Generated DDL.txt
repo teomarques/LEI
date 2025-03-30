@@ -1,0 +1,135 @@
+CREATE TABLE course (
+	course_id BIGINT,
+	nome	 VARCHAR(512),
+	PRIMARY KEY(course_id)
+);
+
+CREATE TABLE course_ed (
+	ano		 BIGINT,
+	assistentes	 BOOL,
+	course_course_id	 BIGINT,
+	instrutor_pessoa_id BIGINT,
+	PRIMARY KEY(ano,course_course_id,instrutor_pessoa_id)
+);
+
+CREATE TABLE instrutor (
+	pessoa_id BIGINT,
+	PRIMARY KEY(pessoa_id)
+);
+
+CREATE TABLE assistentes (
+	instrutor_pessoa_id		 BIGINT,
+	course_ed_ano		 BIGINT,
+	course_ed_course_course_id	 BIGINT,
+	course_ed_instrutor_pessoa_id BIGINT,
+	PRIMARY KEY(instrutor_pessoa_id,course_ed_ano,course_ed_course_course_id,course_ed_instrutor_pessoa_id)
+);
+
+CREATE TABLE aluno_divida_estudantil_historico_academico (
+	media			 DOUBLE PRECISION,
+	divida_estudantil_pago	 BOOL,
+	historico_academico_grade INTEGER,
+	pessoa_id		 BIGINT,
+	PRIMARY KEY(pessoa_id)
+);
+
+CREATE TABLE extracurricular (
+	tipo							 BOOL,
+	custo						 DOUBLE PRECISION,
+	nome							 VARCHAR(512),
+	aluno_divida_estudantil_historico_academico_pessoa_id BIGINT,
+	PRIMARY KEY(aluno_divida_estudantil_historico_academico_pessoa_id)
+);
+
+CREATE TABLE degree (
+	degree_id BIGINT,
+	nome	 VARCHAR(512),
+	PRIMARY KEY(degree_id)
+);
+
+CREATE TABLE aulas (
+	data				 DATE,
+	start_time			 INTEGER,
+	duration			 NUMERIC(2,2),
+	inscritos			 INTEGER,
+	tipo				 BOOL,
+	localizacao_building		 BIGINT,
+	localizacao_sala		 VARCHAR(512),
+	course_ed_ano		 BIGINT,
+	course_ed_course_course_id	 BIGINT,
+	course_ed_instrutor_pessoa_id BIGINT,
+	PRIMARY KEY(data,start_time,localizacao_building,localizacao_sala,course_ed_ano,course_ed_course_course_id,course_ed_instrutor_pessoa_id)
+);
+
+CREATE TABLE localizacao (
+	building	 BIGINT,
+	capacidade BIGINT,
+	sala	 VARCHAR(512),
+	PRIMARY KEY(building,sala)
+);
+
+CREATE TABLE pessoa (
+	id	 BIGINT,
+	nome VARCHAR(512),
+	PRIMARY KEY(id)
+);
+
+CREATE TABLE course_course (
+	course_course_id	 BIGINT,
+	course_course_id1 BIGINT,
+	PRIMARY KEY(course_course_id,course_course_id1)
+);
+
+CREATE TABLE aluno_divida_estudantil_historico_academico_aulas (
+	aluno_divida_estudantil_historico_academico_pessoa_id BIGINT,
+	aulas_data						 DATE,
+	aulas_start_time					 INTEGER,
+	aulas_localizacao_building				 BIGINT,
+	aulas_localizacao_sala				 VARCHAR(512),
+	aulas_course_ed_ano					 BIGINT,
+	aulas_course_ed_course_course_id			 BIGINT,
+	aulas_course_ed_instrutor_pessoa_id			 BIGINT,
+	PRIMARY KEY(aluno_divida_estudantil_historico_academico_pessoa_id,aulas_data,aulas_start_time,aulas_localizacao_building,aulas_localizacao_sala,aulas_course_ed_ano,aulas_course_ed_course_course_id,aulas_course_ed_instrutor_pessoa_id)
+);
+
+CREATE TABLE degree_course (
+	degree_degree_id BIGINT,
+	course_course_id BIGINT,
+	PRIMARY KEY(degree_degree_id,course_course_id)
+);
+
+CREATE TABLE degree_aluno_divida_estudantil_historico_academico (
+	degree_degree_id					 BIGINT,
+	aluno_divida_estudantil_historico_academico_pessoa_id BIGINT,
+	PRIMARY KEY(degree_degree_id,aluno_divida_estudantil_historico_academico_pessoa_id)
+);
+
+CREATE TABLE course_ed_aluno_divida_estudantil_historico_academico (
+	course_ed_ano					 BIGINT,
+	course_ed_course_course_id				 BIGINT,
+	course_ed_instrutor_pessoa_id			 BIGINT,
+	aluno_divida_estudantil_historico_academico_pessoa_id BIGINT,
+	PRIMARY KEY(course_ed_ano,course_ed_course_course_id,course_ed_instrutor_pessoa_id,aluno_divida_estudantil_historico_academico_pessoa_id)
+);
+
+ALTER TABLE course ADD UNIQUE (nome);
+ALTER TABLE course_ed ADD CONSTRAINT course_ed_fk1 FOREIGN KEY (course_course_id) REFERENCES course(course_id);
+ALTER TABLE course_ed ADD CONSTRAINT course_ed_fk2 FOREIGN KEY (instrutor_pessoa_id) REFERENCES instrutor(pessoa_id);
+ALTER TABLE instrutor ADD CONSTRAINT instrutor_fk1 FOREIGN KEY (pessoa_id) REFERENCES pessoa(id);
+ALTER TABLE assistentes ADD CONSTRAINT assistentes_fk1 FOREIGN KEY (instrutor_pessoa_id) REFERENCES instrutor(pessoa_id);
+ALTER TABLE assistentes ADD CONSTRAINT assistentes_fk2 FOREIGN KEY (course_ed_ano, course_ed_course_course_id, course_ed_instrutor_pessoa_id) REFERENCES course_ed(ano, course_course_id, instrutor_pessoa_id);
+ALTER TABLE aluno_divida_estudantil_historico_academico ADD CONSTRAINT aluno_divida_estudantil_historico_academico_fk1 FOREIGN KEY (pessoa_id) REFERENCES pessoa(id);
+ALTER TABLE extracurricular ADD CONSTRAINT extracurricular_fk1 FOREIGN KEY (aluno_divida_estudantil_historico_academico_pessoa_id) REFERENCES aluno_divida_estudantil_historico_academico(pessoa_id);
+ALTER TABLE aulas ADD CONSTRAINT aulas_fk1 FOREIGN KEY (localizacao_building, localizacao_sala) REFERENCES localizacao(building, sala);
+ALTER TABLE aulas ADD CONSTRAINT aulas_fk2 FOREIGN KEY (course_ed_ano, course_ed_course_course_id, course_ed_instrutor_pessoa_id) REFERENCES course_ed(ano, course_course_id, instrutor_pessoa_id);
+ALTER TABLE course_course ADD CONSTRAINT course_course_fk1 FOREIGN KEY (course_course_id) REFERENCES course(course_id);
+ALTER TABLE course_course ADD CONSTRAINT course_course_fk2 FOREIGN KEY (course_course_id1) REFERENCES course(course_id);
+ALTER TABLE aluno_divida_estudantil_historico_academico_aulas ADD CONSTRAINT aluno_divida_estudantil_historico_academico_aulas_fk1 FOREIGN KEY (aluno_divida_estudantil_historico_academico_pessoa_id) REFERENCES aluno_divida_estudantil_historico_academico(pessoa_id);
+ALTER TABLE aluno_divida_estudantil_historico_academico_aulas ADD CONSTRAINT aluno_divida_estudantil_historico_academico_aulas_fk2 FOREIGN KEY (aulas_data, aulas_start_time, aulas_localizacao_building, aulas_localizacao_sala, aulas_course_ed_ano, aulas_course_ed_course_course_id, aulas_course_ed_instrutor_pessoa_id) REFERENCES aulas(data, start_time, localizacao_building, localizacao_sala, course_ed_ano, course_ed_course_course_id, course_ed_instrutor_pessoa_id);
+ALTER TABLE degree_course ADD CONSTRAINT degree_course_fk1 FOREIGN KEY (degree_degree_id) REFERENCES degree(degree_id);
+ALTER TABLE degree_course ADD CONSTRAINT degree_course_fk2 FOREIGN KEY (course_course_id) REFERENCES course(course_id);
+ALTER TABLE degree_aluno_divida_estudantil_historico_academico ADD CONSTRAINT degree_aluno_divida_estudantil_historico_academico_fk1 FOREIGN KEY (degree_degree_id) REFERENCES degree(degree_id);
+ALTER TABLE degree_aluno_divida_estudantil_historico_academico ADD CONSTRAINT degree_aluno_divida_estudantil_historico_academico_fk2 FOREIGN KEY (aluno_divida_estudantil_historico_academico_pessoa_id) REFERENCES aluno_divida_estudantil_historico_academico(pessoa_id);
+ALTER TABLE course_ed_aluno_divida_estudantil_historico_academico ADD CONSTRAINT course_ed_aluno_divida_estudantil_historico_academico_fk1 FOREIGN KEY (course_ed_ano, course_ed_course_course_id, course_ed_instrutor_pessoa_id) REFERENCES course_ed(ano, course_course_id, instrutor_pessoa_id);
+ALTER TABLE course_ed_aluno_divida_estudantil_historico_academico ADD CONSTRAINT course_ed_aluno_divida_estudantil_historico_academico_fk2 FOREIGN KEY (aluno_divida_estudantil_historico_academico_pessoa_id) REFERENCES aluno_divida_estudantil_historico_academico(pessoa_id);
+

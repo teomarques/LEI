@@ -1,0 +1,15 @@
+6.0macs:Mac OS X10.4.1SntP10~Adjoins(y, y)
+; You can make this a sentence by adding a single
+; quantifier (and variable).(Tet(w) $ Large(w))
+; Here, too.Tet(a) $ Large(w)
+; Since you can't add parentheses, you'll have to 
+; put the quantifier in the right place.Tet(w) $ Large(w)
+; How many quantifiers do you need here?
+; Remember, you can't add parentheses.Large(x) $ ~Larger(y, x)@x y ((Cube(x) & Cube(y)) $ ~Larger(x, y))@ Cube(a)
+; Remember, you are only to add quantifiers  or 
+; variables or both.  No changing the "a".  The
+; resulting sentence is odd, but we'll explain 
+; what it means later.@x Tet(y) $ Small(x)
+; The quantifier here is not doing anything.  It
+; doesn't bind the y (wrong variable) and it 
+; doesn't bind the x (wrong scope).((Tet(x) & Tet(y)) $ Between(z, x, y))(Tet(x) & Large(x)) & LeftOf(x, y)s=126732;

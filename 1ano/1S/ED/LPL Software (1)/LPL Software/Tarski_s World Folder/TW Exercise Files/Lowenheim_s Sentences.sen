@@ -1,0 +1,3 @@
+6.0macs:Mac OS X10.4.1SntP10;============ Set One (2-5) ===============/x /y (x # y & SameCol(x, y))
+; Some of the parties are not lonely./x /y (x # y & ~SameCol(x, y))/x ~/y (x # y & SameCol(x, y))~/x /y (x # y & SameCol(x, y));============ Set Two (7-10) ===============@x @y (x # y $ SameCol(x, y))
+; There is only one party. @x @y (x # y $ ~SameCol(x, y))@x ~@y (x # y $ SameCol(x, y))~@x @y (x # y $ SameCol(x, y))s=65396;

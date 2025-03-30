@@ -1,0 +1,2 @@
+6.0macs:Mac OS X10.4.1SntP5Between(a, c, d) % Between(b, c, e)e # f $ (Adjoins(b, c) & Adjoins(e, b) & Adjoins(b, f))SameCol(e, f) $ Smaller(e, e)~((SameRow(e, b) & SameRow(b, c) & 
+      SameRow(c, f)) $ ~Between(a, c, d))LeftOf(e, b) $ RightOf(a, e)s=40580;

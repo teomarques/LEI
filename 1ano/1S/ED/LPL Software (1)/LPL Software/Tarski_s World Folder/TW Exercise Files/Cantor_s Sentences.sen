@@ -1,0 +1,2 @@
+6.0macs:Mac OS X10.4.1SntP2@x @y [(Cube(x) & Cube(y)) $ (LeftOf(x, y) | 
+            RightOf(x, y))]/x /y (Cube(x) & Cube(y))s=21566;

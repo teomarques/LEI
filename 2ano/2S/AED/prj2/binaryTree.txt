@@ -1,0 +1,36 @@
+----------------------------------------
+            SET SAMPLE SIZES            
+----------------------------------------
+Sample 0: 
+Sample 1: 
+Sample 2: 
+Sample 3: 
+Sample 4: ----------------------------------------
+       GENERATING RANDOM SAMPLES        
+----------------------------------------
+Generated sample 10000
+Time (ms): 1723
+
+Generated sample 20000
+Time (ms): 6855
+
+Generated sample 30000
+Time (ms): 15634
+
+Generated sample 40000
+Time (ms): 28037
+
+Generated sample 50000
+Time (ms): 44679
+----------------------------------------
+             END OF PROGRAM             
+----------------------------------------
+----------------------------------------
+           DATA FOR GRAPHING            
+----------------------------------------
+SampleSize,TimeInMs
+10000,1723
+20000,6855
+30000,15634
+40000,28037
+50000,44679
